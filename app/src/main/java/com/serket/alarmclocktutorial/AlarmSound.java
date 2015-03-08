@@ -26,7 +26,6 @@ public class AlarmSound extends Activity {
 
   @Override
   protected void onCreate(Bundle savedInstanceState) {
-      Log.v("Tag1", "We entered on Create");
     super.onCreate(savedInstanceState);
     this.requestWindowFeature(Window.FEATURE_NO_TITLE);
 
@@ -48,7 +47,6 @@ public class AlarmSound extends Activity {
 
     private void play(Context context, Uri alert) {
 
-        Log.v("Tag1", "We entered play");
       player = new MediaPlayer();
       try {
         player.setDataSource(context, alert);
@@ -65,8 +63,6 @@ public class AlarmSound extends Activity {
     }
 
     private Uri getAlarmSound() {
-
-      Log.v("Tag1", "We entered getAlarmSound");
 
         Uri alertSound = RingtoneManager.getDefaultUri(RingtoneManager.TYPE_ALARM);
       if (alertSound == null) {
