@@ -29,22 +29,14 @@ public class MainActivity extends Activity {
         Calendar t = Calendar.getInstance();
         t.add(Calendar.SECOND, 10);
 
-        Log.v("Tag1", "This is the test number 1");
-
         Intent i = new Intent(this, AlarmSound.class);
         PendingIntent pending = PendingIntent.getActivity(this, 1235, i, PendingIntent.FLAG_CANCEL_CURRENT);
 
-        Log.v("Tag1", "This is the test number 2, yeah");
-
         AlarmManager alarm = (AlarmManager) getSystemService(Activity.ALARM_SERVICE);
-
-        Log.v("Tag1", "This is the test number 3, yeah");
 
         alarm.set(AlarmManager.RTC_WAKEUP, t.getTimeInMillis(), pending);
 //        startActivity(intent);
 
-        Log.v("Tag1", "This is the test number 4, yeah");
-        
     }
 
 
